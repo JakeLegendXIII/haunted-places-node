@@ -30,22 +30,18 @@ fs.createReadStream('data/haunted_places.csv')
     let city_location = toGeo(city_longitude, city_latitude);
 
     // define the Redis key
-    let key = `${config.JSON_KEY_PREFIX}:${id}`;
-
-    // create the JSON to store
-    let json = JSON.stringify(
-      Object.fromEntries(
+    let key = `${config.HASH_KEY_PREFIX}:${id}`;
+    // collate the values to save in a Redis hash
+    let values = Object.fromEntries(
         Object
           .entries({
             id, city, country, description, location_text,
             state, state_abbrev, longitude, latitude, location,
-            city_longitude, city_latitude, city_location
-           })
-          .filter(entry => entry[1] !== undefined))); // removes empty values    
-
-    // write the data to Redis
-    p.call('JSON.SET', key, '.', json);
-
+            city_longitude, city_latitude, city_location })
+          .filter(entry => entry[1] !== undefined)) // removes empty values
+  
+      // write the data to Redis
+      p.hset(key, values);
   })
   .on('end', () => {
     p.exec()

@@ -4,13 +4,16 @@
   "description": "Basic code for building out a cloud hosted api to find nearby Haunted Places using Redis + RediSearch",
   "type": "module",
   "private": true,
-  "scripts": {    
-    "load-json": "node load-json.js",    
+  "scripts": {
+    "load": "node load-hash.js",
+    "load-json": "node load-json.js",
+    "index": "node create-indices.js",
     "index-json": "node create-indices-json.js"
   },
   "author": "JK",
   "license": "GPL-3.0",
   "dependencies": {
+    "bestzip": "^2.2.0",
     "csv-parser": "^3.0.0",
     "ioredis": "^4.27.6"
   }
