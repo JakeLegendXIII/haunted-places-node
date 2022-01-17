@@ -1,0 +1,26 @@
+{
+  "name": "haunted-places-lambda",
+  "version": "1.0.0",
+  "description": "App code for finding Haunted Locations using Redis and RediSearch.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakeLegendXIII/haunted-places-node.git"
+  },
+  "author": "JK",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/JakeLegendXIII/haunted-places-node/issues"
+  },
+  "homepage": "https://github.com/JakeLegendXIII/haunted-places-node#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1058.0",
+    "redis-om": "^0.1.7"
+  },
+  "devDependencies": {
+    "dotenv": "^12.0.3"
+  }
+}

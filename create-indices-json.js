@@ -17,7 +17,7 @@ async function main() {
     'ON', 'json',
     'PREFIX', 1, `${config.JSON_KEY_PREFIX}:`,
     'SCHEMA',
-      '$.id', 'AS', 'id', 'TAG',
+      '$.id', 'AS', 'id', 'NUMERIC',
       '$.city', 'AS', 'city', 'TAG',
       '$.country', 'AS', 'country', 'TAG',
       '$.description', 'AS', 'description', 'TEXT', 'SORTABLE',
@@ -31,7 +31,7 @@ async function main() {
       '$.city_longitude', 'AS', 'city_longitude', 'NUMERIC', 'SORTABLE',
       '$.city_location', 'AS', 'city_location', 'GEO'     
   );
-    
+  
   // all done
   r.quit();
 }

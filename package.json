@@ -8,7 +8,8 @@
     "load": "node load-hash.js",
     "load-json": "node load-json.js",
     "index": "node create-indices.js",
-    "index-json": "node create-indices-json.js"
+    "index-json": "node create-indices-json.js",
+    "build:haunted-places-lambda": "cd haunted-places-lambda && bestzip ../build/haunted-places-lambda.zip *"
   },
   "author": "JK",
   "license": "GPL-3.0",
