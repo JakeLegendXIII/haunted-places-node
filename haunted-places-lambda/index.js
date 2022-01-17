@@ -6,7 +6,11 @@ exports.handler = async (event, context) => {
         let client = new Client();
         await client.open(getEnvironmentVariable('REDIS_CONNECTION'));
         let searchText = BuildSearchText(event);
-        let queryResult = await client.execute(['FT.SEARCH' , getEnvironmentVariable('REDIS_SEARCH_INDEX_NAME'), searchText]);
+        let index = getEnvironmentVariable('REDIS_SEARCH_INDEX_NAME');
+        // LIMIT 0 0 returns just the count
+        let countResult = await client.execute(['FT.SEARCH' , index, searchText, "LIMIT", 0, 0]);
+        // LIMIT 0 N returns all the rows between the offset of 0 and the number N - offset is zero-indexed
+        let queryResult = await client.execute(['FT.SEARCH' , index, searchText, "LIMIT", 0, countResult[0]]);
         await client.close();
 
         let response = buildResponse(queryResult);
