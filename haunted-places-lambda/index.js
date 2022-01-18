@@ -31,7 +31,7 @@ exports.handler = async (event, context) => {
 }
 
 const buildResponse = (queryResult) => {
-    // The execute gives us a pretty nested set of hashs we can iterate through
+    // The execute gives us a pretty nested set of hashes we can iterate through
     let itemCount = queryResult[0];
     let body = [];
     Object.keys(queryResult).forEach(function (key) {
