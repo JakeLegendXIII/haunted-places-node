@@ -1,6 +1,6 @@
 {
   "name": "haunted-places-node",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Basic code for building out a cloud hosted api to find nearby Haunted Places using Redis + RediSearch",
   "type": "module",
   "private": true,
@@ -14,7 +14,7 @@
   "author": "JK",
   "license": "GPL-3.0",
   "dependencies": {
-    "bestzip": "^2.2.0",
+    "bestzip": "^2.2.1",
     "csv-parser": "^3.0.0",
     "ioredis": "^4.27.6"
   }

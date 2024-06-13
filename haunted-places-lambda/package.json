@@ -1,6 +1,6 @@
 {
   "name": "haunted-places-lambda",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "App code for finding Haunted Locations using Redis and RediSearch.",
   "main": "index.js",
@@ -21,6 +21,6 @@
     "redis-om": "^0.3.6"
   },
   "devDependencies": {
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.4.5"
   }
 }
